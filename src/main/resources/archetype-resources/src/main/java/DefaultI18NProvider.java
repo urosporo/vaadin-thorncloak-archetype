@@ -16,7 +16,7 @@ import com.vaadin.cdi.annotation.UIScoped;
 import com.vaadin.cdi.annotation.VaadinServiceScoped;
 import com.vaadin.flow.i18n.I18NProvider;
 
-import ${package}.DefaultI18NProvider;
+import ch.dsent.DefaultI18NProvider;
 
 /**
  * The default implementation of {@link I18NProvider} to provide labels for this application
