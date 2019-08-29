@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>${groupId}</groupId>
+  <artifactId>${rootArtifactId}</artifactId>
+  <version>${version}</version>
+  
+  <packaging>war</packaging>
+  
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>This is the Vaadin web-client of ${applicationName}</description>
+
+#if (${productUrl} != 'https://www.myorganization.ch/myapplication')
+  <url>${productUrl}</url>
+#end
+  <inceptionYear>${inceptionYear}</inceptionYear>
+
+#if (${organizationName} != 'my organization' || ${organizationUrl} != 'https://www.myorganization.ch')
+  <organization>
+#if (${organizationName} != 'my organization')
+    <name>${organizationName}</name>
+#end
+#if (${organizationUrl} != 'https://www.myorganization.ch')
+    <url>${organizationUrl}</url>
+#end
+  </organization>
+#end
+
+#if (${developerId} != 'your id' && ${developerName} != 'your fullname' && ${developerEMail} != 'you@yourcompany.ch')
+  <developers>
+    <developer>
+      <id>${developerId}</id>
+      <name>${developerName}</name>
+      <email>${developerEMail}</email>
+#if (${organizationName} != 'my organization')
+      <organization>${organizationName}</organization>
+#end
+#if (${organizationUrl} != 'https://www.myorganization.ch')
+      <organizationUrl>${organizationUrl}</organizationUrl>
+#end
+    </developer>
+  </developers>
+#end
+
+#if (${issueMgmtSystem} != 'my issue-system' && ${issueMgmtSystemUrl} != 'https://myIssueSystem/myapplication')
+  <issueManagement>
+    <system>${issueMgmtSystem}</system>
+    <url>${issueMgmtSystemUrl}</url>
+  </issueManagement>
+#end
+
+#if (${ciMgmtSystem} != 'my build-system' && ${ciMgmtSystemUrl} != 'https://myBuildSystem/myapplication')
+  <ciManagement>
+    <system>${ciMgmtSystem}</system>
+    <url>${ciMgmtSystemUrl}</url>
+  </ciManagement>
+#end
+
+#if ((${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots') || (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases'))
+  <distributionManagement>
+#if (${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots')
+    <snapshotRepository>
+      <id>${snapshotRepositoryId}</id>
+      <url>${snapshotRepositoryUrl}</url>
+    </snapshotRepository>
+#end
+#if (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases')
+    <repository>
+      <id>${releaseRepositoryId}</id>
+      <url>${releaseRepositoryUrl}</url>
+    </repository>
+#end
+  </distributionManagement>
+#end
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+
+    <javaee.version>8.0</javaee.version>
+    <thorntail.version>2.5.0.Final</thorntail.version>
+    <keycloak.adapter.version>4.8.3.Final</keycloak.adapter.version>
+    <vaadin.version>14.0.0</vaadin.version>
+  </properties>
+
+  <prerequisites>
+    <maven>3</maven>
+  </prerequisites>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-bom</artifactId>
+        <version>${vaadin.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>io.thorntail</groupId>
+        <artifactId>bom</artifactId>
+        <version>${thorntail.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.keycloak.bom</groupId>
+        <artifactId>keycloak-adapter-bom</artifactId>
+        <version>${keycloak.adapter.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-cdi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>keycloak</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>microprofile-restclient</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.keycloak</groupId>
+      <artifactId>keycloak-adapter-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.keycloak</groupId>
+      <artifactId>keycloak-adapter-spi</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>${javaee.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-maven-plugin</artifactId>
+        <version>${vaadin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-frontend</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${thorntail.version}</version>
+        <executions>
+          <execution>
+            <id>package</id>
+            <goals>
+              <goal>package</goal>
+            </goals>
+            <configuration>
+              <hollow>true</hollow>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>production</id>
+      <properties>
+        <vaadin.productionMode>true</vaadin.productionMode>
+      </properties>
+
+      <dependencies>
+        <dependency>
+          <groupId>com.vaadin</groupId>
+          <artifactId>flow-server-production-mode</artifactId>
+        </dependency>
+      </dependencies>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>prepare-frontend</goal>
+                  <goal>build-frontend</goal>
+                </goals>
+                <phase>compile</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-maven-plugin</artifactId>
+            <version>${thorntail.version}</version>
+            <executions>
+              <execution>
+                <id>package</id>
+                <goals>
+                  <goal>package</goal>
+                </goals>
+                <configuration>
+                  <hollow>true</hollow>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

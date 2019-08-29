@@ -1,0 +1,59 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+  <context-param>
+    <param-name>encoding</param-name>
+    <param-value>UTF-8</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>keycloak.config.resolver</param-name>
+    <param-value>${package}.security.TenantConfigResolver</param-value>
+  </context-param>
+
+  <security-constraint>
+    <display-name>SecureApplicationConstraint</display-name>
+    <web-resource-collection>
+      <web-resource-name>SecureApplicationConstraint</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
+  <servlet>
+    <servlet-name>vaadinServlet</servlet-name>
+    <servlet-class>com.vaadin.cdi.CdiVaadinServlet</servlet-class>
+
+    <init-param>
+      <param-name>closeIdleSessions</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>productionMode</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <async-supported>true</async-supported>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>vaadinServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <login-config>
+    <auth-method>KEYCLOAK</auth-method>
+    <realm-name>this is ignored currently</realm-name>
+  </login-config>
+
+  <security-role>
+    <role-name>user</role-name>
+  </security-role>
+</web-app>

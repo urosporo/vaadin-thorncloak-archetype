@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="${rootArtifactId}"
+  xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="applicationName">
+      <defaultValue>my application</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="webSecurityRole">
+      <defaultValue>websecurity-role</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="securityDomain">
+      <defaultValue>security-domain</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="productUrl">
+      <defaultValue>https://www.myorganization.ch/myapplication</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="inceptionYear">
+      <defaultValue>2019</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organizationName">
+      <defaultValue>my organization</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organizationUrl">
+      <defaultValue>https://www.myorganization.ch</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerId">
+      <defaultValue>your id</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerName">
+      <defaultValue>your fullname</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerEMail">
+      <defaultValue>you@yourcompany.ch</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="issueMgmtSystem">
+      <defaultValue>my issue-system</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="issueMgmtSystemUrl">
+      <defaultValue>https://myIssueSystem/myapplication</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="ciMgmtSystem">
+      <defaultValue>my build-system</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="ciMgmtSystemUrl">
+      <defaultValue>https://myBuildSystem/myapplication</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="snapshotRepositoryId">
+      <defaultValue>my-snapshots</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="snapshotRepositoryUrl">
+      <defaultValue>http://myrepository/my-snapshots</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="releaseRepositoryId">
+      <defaultValue>my-releases</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="releaseRepositoryUrl">
+      <defaultValue>http://myrepository/my-releases</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="scmConnection">
+      <defaultValue>scm:svn:http://myscmconnection</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="scmUrl">
+      <defaultValue>http://myscmurl</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="keyCloakUrl">
+      <defaultValue>http://localhost:8084/auth</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="tenant">
+      <defaultValue>default</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <fileSets>
+    <fileSet>
+      <directory>frontend/src/views</directory>
+    </fileSet>
+    <fileSet>
+      <directory>frontend/src/styles</directory>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/docker</directory>
+    </fileSet>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>

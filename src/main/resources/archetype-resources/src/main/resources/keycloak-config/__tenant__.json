@@ -1,0 +1,11 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+{
+  "realm": "${tenant}",
+  "auth-server-url": "${keyCloakUrl}",
+  "ssl-required": "external",
+  "resource": "${package}-webclient",
+  "public-client": true,
+  "confidential-port": 0
+}
