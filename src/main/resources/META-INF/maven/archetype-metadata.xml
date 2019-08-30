@@ -70,14 +70,17 @@
     </requiredProperty>
   </requiredProperties>
   <fileSets>
+    <fileSet filtered="true">
+      <directory></directory>
+      <includes>
+        <include>Dockerfile</include>
+      </includes>
+    </fileSet>
     <fileSet>
       <directory>frontend/src/views</directory>
     </fileSet>
     <fileSet>
       <directory>frontend/src/styles</directory>
-    </fileSet>
-    <fileSet>
-      <directory>src/main/docker</directory>
     </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>

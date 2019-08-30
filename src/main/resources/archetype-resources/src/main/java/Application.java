@@ -39,14 +39,14 @@ public class Application extends Span {
 
         add(button);
 
-        button.addClickListener(clickEvent -> {
-
-            this.clientFactory.createInstance("http://localhost:8083", AccountTypeSerivceApi.class).ifPresent(serviceClient -> {
-
-                final AccountTypeResponse response = serviceClient.get();
-
-                System.out.println(response);
-            });
-        });
+//        button.addClickListener(clickEvent -> {
+//
+//            this.clientFactory.createInstance("http://localhost:8083", AccountTypeSerivceApi.class).ifPresent(serviceClient -> {
+//
+//                final AccountTypeResponse response = serviceClient.get();
+//
+//                System.out.println(response);
+//            });
+//        });
     }
 }
