@@ -26,7 +26,7 @@
   <scm>
     <url>https://github.com/urosporo/vaadin-thorncloak-archetype</url>
     <connection>https://github.com:urosporo/vaadin-thorncloak-archetype.git</connection>
-    <developerConnection>https://github.com:urosporo/vaadin-thorncloak-archetype.git</developerConnection>
+    <developerConnection>git@github.com:urosporo/vaadin-thorncloak-archetype.git</developerConnection>
   </scm>
 
   <licenses>
