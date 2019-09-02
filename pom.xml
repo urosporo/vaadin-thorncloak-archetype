@@ -38,17 +38,17 @@
   
   <distributionManagement>
     <repository>
-      <id>urosporo-staging</id>
-      <name>Urosporo release staging repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>urosporo-release</id>
+      <name>repo.miemsoft.com-releases</name>
+      <url>https://repo.miemsoft.com/artifactory/urosporo-release</url>
     </repository>
     <snapshotRepository>
-      <id>urosporo-snapshots</id>
-      <name>Urosporo snapshot repository</name>
-      <url>https://oss.sonatype.org/content/repositories/urosporo-snapshots/</url>
+      <id>urosporo-snapshot</id>
+      <name>repo.miemsoft.com-snapshots</name>
+      <url>https://repo.miemsoft.com/artifactory/urosporo-snapshot</url>
     </snapshotRepository>
   </distributionManagement>
-  
+    
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
