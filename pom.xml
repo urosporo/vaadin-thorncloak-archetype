@@ -4,9 +4,10 @@
   <groupId>com.urosporo</groupId>
   <artifactId>vaadin-thorncloak-archetype</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  
+
   <packaging>pom</packaging>
 
+  <name>vaadin-thorncloak-archetype</name>
   <description>An archetype to generate a multi-tenancy (Keycloak) enabled Vaadin 14 project which runs in Thorntail and can build as a docker image</description>
 
   <url>http://urosporo.com</url>
@@ -15,19 +16,19 @@
     <developer>
       <id>mbrem</id>
       <name>Michael Brem</name>
-      <email>michael.brem@miemsoft.com</email>
+      <email>brm@miemsoft.com</email>
       <organization>Urosporo</organization>
       <organizationUrl>http://urosporo.com</organizationUrl>
       <timezone>+1</timezone>
     </developer>
   </developers>
-  
+
   <scm>
     <url>https://github.com/urosporo/vaadin-thorncloak-archetype</url>
     <connection>https://github.com:urosporo/vaadin-thorncloak-archetype.git</connection>
     <developerConnection>https://github.com:urosporo/vaadin-thorncloak-archetype.git</developerConnection>
   </scm>
-  
+
   <licenses>
     <license>
       <name>Apache License Version 2.0</name>
@@ -35,7 +36,7 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
-  
+
   <distributionManagement>
     <repository>
       <id>urosporo-release</id>
@@ -48,7 +49,7 @@
       <url>https://repo.miemsoft.com/artifactory/urosporo-snapshot</url>
     </snapshotRepository>
   </distributionManagement>
-    
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
