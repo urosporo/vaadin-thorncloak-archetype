@@ -26,8 +26,6 @@ import com.vaadin.flow.i18n.LocaleChangeEvent;
 import com.vaadin.flow.i18n.LocaleChangeObserver;
 import com.vaadin.flow.server.VaadinRequest;
 
-import ch.dsent.security.HeaderPropagationFilter;
-
 /**
  * The rest-client-factory to create instances of resteasy clients which provides a Bearer token, the language and the tenant in the header
  *
