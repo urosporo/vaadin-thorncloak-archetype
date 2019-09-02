@@ -5,74 +5,74 @@
   <groupId>${groupId}</groupId>
   <artifactId>${rootArtifactId}</artifactId>
   <version>${version}</version>
-  
+
   <packaging>war</packaging>
-  
+
   <name>${project.groupId}:${project.artifactId}</name>
   <description>This is the Vaadin web-client of ${applicationName}</description>
 
-#if (${productUrl} != 'https://www.myorganization.ch/myapplication')
+  #if (${productUrl} != 'https://www.myorganization.ch/myapplication')
   <url>${productUrl}</url>
-#end
+  #end
   <inceptionYear>${inceptionYear}</inceptionYear>
 
-#if (${organizationName} != 'my organization' || ${organizationUrl} != 'https://www.myorganization.ch')
+  #if (${organizationName} != 'my organization' || ${organizationUrl} != 'https://www.myorganization.ch')
   <organization>
-#if (${organizationName} != 'my organization')
+    #if (${organizationName} != 'my organization')
     <name>${organizationName}</name>
-#end
-#if (${organizationUrl} != 'https://www.myorganization.ch')
+    #end
+    #if (${organizationUrl} != 'https://www.myorganization.ch')
     <url>${organizationUrl}</url>
-#end
+    #end
   </organization>
-#end
+  #end
 
-#if (${developerId} != 'your id' && ${developerName} != 'your fullname' && ${developerEMail} != 'you@yourcompany.ch')
+  #if (${developerId} != 'your id' && ${developerName} != 'your fullname' && ${developerEMail} != 'you@yourcompany.ch')
   <developers>
     <developer>
       <id>${developerId}</id>
       <name>${developerName}</name>
       <email>${developerEMail}</email>
-#if (${organizationName} != 'my organization')
+      #if (${organizationName} != 'my organization')
       <organization>${organizationName}</organization>
-#end
-#if (${organizationUrl} != 'https://www.myorganization.ch')
+      #end
+      #if (${organizationUrl} != 'https://www.myorganization.ch')
       <organizationUrl>${organizationUrl}</organizationUrl>
-#end
+      #end
     </developer>
   </developers>
-#end
+  #end
 
-#if (${issueMgmtSystem} != 'my issue-system' && ${issueMgmtSystemUrl} != 'https://myIssueSystem/myapplication')
+  #if (${issueMgmtSystem} != 'my issue-system' && ${issueMgmtSystemUrl} != 'https://myIssueSystem/myapplication')
   <issueManagement>
     <system>${issueMgmtSystem}</system>
     <url>${issueMgmtSystemUrl}</url>
   </issueManagement>
-#end
+  #end
 
-#if (${ciMgmtSystem} != 'my build-system' && ${ciMgmtSystemUrl} != 'https://myBuildSystem/myapplication')
+  #if (${ciMgmtSystem} != 'my build-system' && ${ciMgmtSystemUrl} != 'https://myBuildSystem/myapplication')
   <ciManagement>
     <system>${ciMgmtSystem}</system>
     <url>${ciMgmtSystemUrl}</url>
   </ciManagement>
-#end
+  #end
 
-#if ((${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots') || (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases'))
+  #if ((${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots') || (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases'))
   <distributionManagement>
-#if (${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots')
+    #if (${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots')
     <snapshotRepository>
       <id>${snapshotRepositoryId}</id>
       <url>${snapshotRepositoryUrl}</url>
     </snapshotRepository>
-#end
-#if (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases')
+    #end
+    #if (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases')
     <repository>
       <id>${releaseRepositoryId}</id>
       <url>${releaseRepositoryUrl}</url>
     </repository>
-#end
+    #end
   </distributionManagement>
-#end
+  #end
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -155,6 +155,7 @@
   </dependencies>
 
   <build>
+    <finalName>application</finalName>
     <plugins>
       <plugin>
         <groupId>com.vaadin</groupId>
@@ -202,6 +203,7 @@
       </dependencies>
 
       <build>
+        <finalName>application</finalName>
         <plugins>
           <plugin>
             <groupId>com.vaadin</groupId>

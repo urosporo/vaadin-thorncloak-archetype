@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.inject.Inject;
 import javax.ws.rs.core.HttpHeaders;
 
 import org.eclipse.microprofile.rest.client.RestClientBuilder;

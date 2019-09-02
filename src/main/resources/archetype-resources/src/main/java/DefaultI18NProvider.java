@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 
 import org.slf4j.LoggerFactory;
 
-import com.vaadin.cdi.annotation.UIScoped;
 import com.vaadin.cdi.annotation.VaadinServiceScoped;
 import com.vaadin.flow.i18n.I18NProvider;
 
