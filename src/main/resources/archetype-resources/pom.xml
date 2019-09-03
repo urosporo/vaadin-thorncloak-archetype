@@ -167,7 +167,6 @@
   </dependencies>
 
   <build>
-    <finalName>application</finalName>
     <plugins>
       <plugin>
         <groupId>com.vaadin</groupId>
