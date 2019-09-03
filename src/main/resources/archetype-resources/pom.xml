@@ -11,8 +11,8 @@
   <name>${project.groupId}:${project.artifactId}</name>
   <description>This is the Vaadin web-client of ${applicationName}</description>
 
-  #if (${productUrl} != 'https://www.myorganization.ch/myapplication')
-  <url>${productUrl}</url>
+  #if (${applicationUrl} != 'https://www.myorganization.ch/myapplication')
+  <url>${applicationUrl}</url>
   #end
   <inceptionYear>${inceptionYear}</inceptionYear>
 

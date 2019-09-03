@@ -8,8 +8,8 @@
     <requiredProperty key="webSecurityRole">
       <defaultValue>websecurity-role</defaultValue>
     </requiredProperty>
-    <requiredProperty key="productUrl">
-      <defaultValue>https://www.myorganization.ch/myapplication</defaultValue>
+    <requiredProperty key="applicationUrl">
+      <defaultValue>https://www.myorganization.com/myapplication</defaultValue>
     </requiredProperty>
     <requiredProperty key="inceptionYear">
       <defaultValue>2019</defaultValue>
@@ -18,10 +18,10 @@
       <defaultValue>my organization</defaultValue>
     </requiredProperty>
     <requiredProperty key="organizationUrl">
-      <defaultValue>https://www.myorganization.ch</defaultValue>
+      <defaultValue>https://www.myorganization.com</defaultValue>
     </requiredProperty>
     <requiredProperty key="developerId">
-      <defaultValue>your id</defaultValue>
+      <defaultValue>your user-id</defaultValue>
     </requiredProperty>
     <requiredProperty key="developerName">
       <defaultValue>your fullname</defaultValue>
