@@ -24,6 +24,7 @@ An example with all optional possible properties:
       -DarchetypeArtifactId=vaadin-thorncloak-archetype \
       -DarchetypeVersion=1.0.0-SNAPSHOT \
       -DgroupId=com.foo.bar \
+      -Dpackage=com.foo.bar.myapplication \
       -DartifactId=my-vaadin-project \
       -Dversion=1.0.0-SNAPSHOT \
       -DapplicationName='My application' \
