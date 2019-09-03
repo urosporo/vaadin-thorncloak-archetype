@@ -11,61 +11,73 @@
   <name>${project.groupId}:${project.artifactId}</name>
   <description>This is the Vaadin web-client of ${applicationName}</description>
 
-  #if (${applicationUrl} != 'https://www.myorganization.ch/myapplication')
+  #if (${applicationUrl} != 'UNSETOPTVALUE')
   <url>${applicationUrl}</url>
   #end
+  #if (${inceptionYear} != 'UNSETOPTVALUE')
   <inceptionYear>${inceptionYear}</inceptionYear>
+  #end
 
-  #if (${organizationName} != 'my organization' || ${organizationUrl} != 'https://www.myorganization.ch')
+  #if (${organizationName} != 'UNSETOPTVALUE' || ${organizationUrl} != 'UNSETOPTVALUE')
   <organization>
-    #if (${organizationName} != 'my organization')
+    #if (${organizationName} != 'UNSETOPTVALUE')
     <name>${organizationName}</name>
     #end
-    #if (${organizationUrl} != 'https://www.myorganization.ch')
+    #if (${organizationUrl} != 'UNSETOPTVALUE')
     <url>${organizationUrl}</url>
     #end
   </organization>
   #end
 
-  #if (${developerId} != 'your id' && ${developerName} != 'your fullname' && ${developerEMail} != 'you@yourcompany.ch')
+  #if (${developerId} != 'UNSETOPTVALUE' && ${developerName} != 'UNSETOPTVALUE' && ${developerEMail} != 'UNSETOPTVALUE')
   <developers>
     <developer>
       <id>${developerId}</id>
       <name>${developerName}</name>
       <email>${developerEMail}</email>
-      #if (${organizationName} != 'my organization')
+      #if (${organizationName} != 'UNSETOPTVALUE')
       <organization>${organizationName}</organization>
       #end
-      #if (${organizationUrl} != 'https://www.myorganization.ch')
+      #if (${organizationUrl} != 'UNSETOPTVALUE')
       <organizationUrl>${organizationUrl}</organizationUrl>
       #end
     </developer>
   </developers>
   #end
 
-  #if (${issueMgmtSystem} != 'my issue-system' && ${issueMgmtSystemUrl} != 'https://myIssueSystem/myapplication')
+  #if (${scmUrl} != 'UNSETOPTVALUE' && ${scmConnection} != 'UNSETOPTVALUE')
+  <scm>
+    <url>${scmUrl}</url>
+    <connection>${scmConnection}</connection>
+    #if (${scmDeveloperConnection} != 'UNSETOPTVALUE')
+    <developerConnection>${scmDeveloperConnection}</developerConnection>
+    #end
+  </scm>
+  #end
+
+  #if (${issueMgmtSystem} != 'UNSETOPTVALUE' && ${issueMgmtSystemUrl} != 'UNSETOPTVALUE')
   <issueManagement>
     <system>${issueMgmtSystem}</system>
     <url>${issueMgmtSystemUrl}</url>
   </issueManagement>
   #end
 
-  #if (${ciMgmtSystem} != 'my build-system' && ${ciMgmtSystemUrl} != 'https://myBuildSystem/myapplication')
+  #if (${ciMgmtSystem} != 'UNSETOPTVALUE' && ${ciMgmtSystemUrl} != 'UNSETOPTVALUE')
   <ciManagement>
     <system>${ciMgmtSystem}</system>
     <url>${ciMgmtSystemUrl}</url>
   </ciManagement>
   #end
 
-  #if ((${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots') || (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases'))
+  #if ((${snapshotRepositoryId} != 'UNSETOPTVALUE' && ${snapshotRepositoryUrl} != 'UNSETOPTVALUE') || (${releaseRepositoryId} != 'UNSETOPTVALUE' && ${releaseRepositoryUrl} != 'UNSETOPTVALUE'))
   <distributionManagement>
-    #if (${snapshotRepositoryId} != 'my-snapshots' && ${snapshotRepositoryUrl} != 'http://myrepository/my-snapshots')
+    #if (${snapshotRepositoryId} != 'UNSETOPTVALUE' && ${snapshotRepositoryUrl} != 'UNSETOPTVALUE')
     <snapshotRepository>
       <id>${snapshotRepositoryId}</id>
       <url>${snapshotRepositoryUrl}</url>
     </snapshotRepository>
     #end
-    #if (${releaseRepositoryId} != 'my-releases' && ${releaseRepositoryUrl} != 'http://myrepository/my-releases')
+    #if (${releaseRepositoryId} != 'UNSETOPTVALUE' && ${releaseRepositoryUrl} != 'UNSETOPTVALUE')
     <repository>
       <id>${releaseRepositoryId}</id>
       <url>${releaseRepositoryUrl}</url>

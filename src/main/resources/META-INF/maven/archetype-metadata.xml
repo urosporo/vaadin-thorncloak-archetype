@@ -3,67 +3,70 @@
   xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
     <requiredProperty key="applicationName">
-      <defaultValue>my application</defaultValue>
+      <defaultValue></defaultValue>
     </requiredProperty>
     <requiredProperty key="webSecurityRole">
-      <defaultValue>websecurity-role</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="applicationUrl">
-      <defaultValue>https://www.myorganization.com/myapplication</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="inceptionYear">
-      <defaultValue>2019</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="organizationName">
-      <defaultValue>my organization</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="organizationUrl">
-      <defaultValue>https://www.myorganization.com</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="developerId">
-      <defaultValue>your user-id</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="developerName">
-      <defaultValue>your fullname</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="developerEMail">
-      <defaultValue>you@yourcompany.ch</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="issueMgmtSystem">
-      <defaultValue>my issue-system</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="issueMgmtSystemUrl">
-      <defaultValue>https://myIssueSystem/myapplication</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="ciMgmtSystem">
-      <defaultValue>my build-system</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="ciMgmtSystemUrl">
-      <defaultValue>https://myBuildSystem/myapplication</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="snapshotRepositoryId">
-      <defaultValue>my-snapshots</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="snapshotRepositoryUrl">
-      <defaultValue>http://myrepository/my-snapshots</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="releaseRepositoryId">
-      <defaultValue>my-releases</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="releaseRepositoryUrl">
-      <defaultValue>http://myrepository/my-releases</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="scmConnection">
-      <defaultValue>scm:svn:http://myscmconnection</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="scmUrl">
-      <defaultValue>http://myscmurl</defaultValue>
+      <defaultValue></defaultValue>
     </requiredProperty>
     <requiredProperty key="keyCloakUrl">
-      <defaultValue>http://localhost:8084/auth</defaultValue>
+      <defaultValue></defaultValue>
     </requiredProperty>
     <requiredProperty key="tenant">
-      <defaultValue>default</defaultValue>
+      <defaultValue></defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organizationName">
+      <defaultValue></defaultValue>
+    </requiredProperty>
+    <requiredProperty key="applicationUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="inceptionYear">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="organizationUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerId">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerName">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="developerEMail">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="issueMgmtSystem">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="issueMgmtSystemUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="ciMgmtSystem">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="ciMgmtSystemUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="snapshotRepositoryId">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="snapshotRepositoryUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="releaseRepositoryId">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="releaseRepositoryUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="scmUrl">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="scmConnection">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="scmDeveloperConnection">
+      <defaultValue>UNSETOPTVALUE</defaultValue>
     </requiredProperty>
   </requiredProperties>
   <fileSets>

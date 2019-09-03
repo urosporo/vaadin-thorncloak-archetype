@@ -21,7 +21,7 @@
       <url-pattern>/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>user</role-name>
+      <role-name>${webSecurityRole}</role-name>
     </auth-constraint>
     <user-data-constraint>
       <transport-guarantee>NONE</transport-guarantee>
@@ -54,6 +54,6 @@
   </login-config>
 
   <security-role>
-    <role-name>user</role-name>
+    <role-name>${webSecurityRole}</role-name>
   </security-role>
 </web-app>
