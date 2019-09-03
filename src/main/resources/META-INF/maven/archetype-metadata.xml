@@ -70,7 +70,7 @@
     </requiredProperty>
   </requiredProperties>
   <fileSets>
-    <fileSet>
+    <fileSet filtered="true">
       <directory></directory>
       <includes>
         <include>Dockerfile</include>

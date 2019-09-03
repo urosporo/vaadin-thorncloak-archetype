@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 FROM openjdk:jre-alpine
 LABEL authors="${organizationName}"
 
