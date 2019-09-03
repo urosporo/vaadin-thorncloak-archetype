@@ -5,7 +5,6 @@ package ${package};
 
 import javax.inject.Inject;
 
-import com.vaadin.cdi.annotation.VaadinServiceEnabled;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
@@ -22,7 +21,6 @@ import ${package}.security.BearerTokenBasedRestClientFactory;
  * @since ${version}
  */
 @Route(value = "")
-@VaadinServiceEnabled
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 public class Application extends Span {
 

@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import org.slf4j.LoggerFactory;
 
+import com.vaadin.cdi.annotation.VaadinServiceEnabled;
 import com.vaadin.cdi.annotation.VaadinServiceScoped;
 import com.vaadin.flow.i18n.I18NProvider;
 
@@ -22,6 +23,7 @@ import com.vaadin.flow.i18n.I18NProvider;
  * @since ${version}
  */
 @VaadinServiceScoped
+@VaadinServiceEnabled
 public class DefaultI18NProvider implements I18NProvider {
 
     public static final String BUNDLE_PREFIX = "labels";
