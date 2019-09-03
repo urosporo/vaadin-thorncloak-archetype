@@ -8,9 +8,6 @@
     <requiredProperty key="webSecurityRole">
       <defaultValue>websecurity-role</defaultValue>
     </requiredProperty>
-    <requiredProperty key="securityDomain">
-      <defaultValue>security-domain</defaultValue>
-    </requiredProperty>
     <requiredProperty key="productUrl">
       <defaultValue>https://www.myorganization.ch/myapplication</defaultValue>
     </requiredProperty>
