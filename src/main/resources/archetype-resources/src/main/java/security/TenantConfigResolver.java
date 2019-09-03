@@ -44,17 +44,23 @@ public class TenantConfigResolver implements KeycloakConfigResolver {
                     .getResourceAsStream(String.format("keycloak-config/%s.json", tenant));
 
             if (is != null) {
-                try {
-                    return KeycloakDeploymentBuilder.build(is);
-                } catch (final RuntimeException e) {
-                    LOG.error("Unable to initialize keycloak for tenant '{}'.", tenant, e);
-                }
+                return buildDeployment(tenant, is);
             } else {
                 LOG.warn("No pepcheck client config for tenant '{}'. Check if the client config is packaged inside the pepcheck service!", tenant);
             }
         } catch (final URISyntaxException e) {
 
             LOG.error("Unable to initialize keycloak for malformed uri '{}'.", facade.getURI(), e);
+        }
+        return null;
+    }
+
+    private KeycloakDeployment buildDeployment(final String tenant, final InputStream is) {
+
+        try {
+            return KeycloakDeploymentBuilder.build(is);
+        } catch (final RuntimeException e) {
+            LOG.error("Unable to initialize keycloak for tenant '{}'.", tenant, e);
         }
         return null;
     }
