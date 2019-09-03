@@ -16,6 +16,8 @@ import com.vaadin.cdi.annotation.VaadinServiceEnabled;
 import com.vaadin.cdi.annotation.VaadinServiceScoped;
 import com.vaadin.flow.i18n.I18NProvider;
 
+import ch.dsent.onboarding.DefaultI18NProvider;
+
 /**
  * The default implementation of {@link I18NProvider} to provide labels for this application
  *
@@ -67,12 +69,6 @@ public class DefaultI18NProvider implements I18NProvider {
 
         final ClassLoader cl = DefaultI18NProvider.class.getClassLoader();
 
-        ResourceBundle propertiesBundle = null;
-        try {
-            propertiesBundle = ResourceBundle.getBundle(BUNDLE_PREFIX, locale, cl);
-        } catch (final MissingResourceException e) {
-            LoggerFactory.getLogger(DefaultI18NProvider.class.getName()).warn("Missing resource", e);
-        }
-        return propertiesBundle;
+        return ResourceBundle.getBundle(BUNDLE_PREFIX, locale, cl);
     }
 }
