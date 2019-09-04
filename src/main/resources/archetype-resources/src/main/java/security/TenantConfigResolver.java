@@ -38,7 +38,7 @@ public class TenantConfigResolver implements KeycloakConfigResolver {
                 tenant = tenant.substring(0, tenant.indexOf('-'));
             }
 
-            LOG.info("Resolving pepcheck client config for tenant '{}'", tenant);
+            LOG.info("Resolving ${applicationName} client config for tenant '{}'", tenant);
 
             final InputStream is = Thread.currentThread().getContextClassLoader()
                     .getResourceAsStream(String.format("keycloak-config/%s.json", tenant));
@@ -46,7 +46,7 @@ public class TenantConfigResolver implements KeycloakConfigResolver {
             if (is != null) {
                 return buildDeployment(tenant, is);
             } else {
-                LOG.warn("No pepcheck client config for tenant '{}'. Check if the client config is packaged inside the pepcheck service!", tenant);
+                LOG.warn("No ${applicationName} webclient config for tenant '{}'. Check if the client config is packaged inside the ${applicationName} webclient!", tenant);
             }
         } catch (final URISyntaxException e) {
 
