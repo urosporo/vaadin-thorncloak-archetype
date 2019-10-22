@@ -16,8 +16,6 @@ import com.vaadin.cdi.annotation.VaadinServiceEnabled;
 import com.vaadin.cdi.annotation.VaadinServiceScoped;
 import com.vaadin.flow.i18n.I18NProvider;
 
-import ch.dsent.onboarding.DefaultI18NProvider;
-
 /**
  * The default implementation of {@link I18NProvider} to provide labels for this application
  *
@@ -26,9 +24,9 @@ import ch.dsent.onboarding.DefaultI18NProvider;
  */
 @VaadinServiceScoped
 @VaadinServiceEnabled
-public class DefaultI18NProvider implements I18NProvider {
+public class DefaultI18NProvider implements I18NProvider, ComponentConfigurationProvider {
 
-    public static final String BUNDLE_PREFIX = "labels";
+    private static final String BUNDLE_PREFIX = "labels";
 
     @Override
     public List<Locale> getProvidedLocales() {
@@ -52,7 +50,7 @@ public class DefaultI18NProvider implements I18NProvider {
 
         try {
 
-            value = bundle.getString(key);
+            value = bundle.getString(key.toLowerCase());
 
         } catch (final MissingResourceException e) {
 
@@ -65,10 +63,20 @@ public class DefaultI18NProvider implements I18NProvider {
         return value;
     }
 
+    @Override
+    public <T extends ComponentView> boolean isUsed(final Class<T> viewType, final String componentId) {
+
+        // TODO null-safety check
+
+        return readProperties(Locale.getDefault()).containsKey(viewType.getSimpleName().toLowerCase() + "." + componentId.toLowerCase() + ".label");
+    }
+
     private ResourceBundle readProperties(final Locale locale) {
 
-        final ClassLoader cl = DefaultI18NProvider.class.getClassLoader();
+        // TODO implement tenant-staged reading (e.g. 1th sygnum-labels.properties, 2th labels.properties)
 
-        return ResourceBundle.getBundle(BUNDLE_PREFIX, locale, cl);
+        final ClassLoader classLoader = DefaultI18NProvider.class.getClassLoader();
+
+        return ResourceBundle.getBundle(BUNDLE_PREFIX, locale, classLoader);
     }
 }
