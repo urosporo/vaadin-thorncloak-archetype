@@ -86,7 +86,7 @@
     <javaee.version>8.0</javaee.version>
     <thorntail.version>2.5.0.Final</thorntail.version>
     <keycloak.adapter.version>4.8.3.Final</keycloak.adapter.version>
-    <vaadin.version>14.0.0</vaadin.version>
+    <vaadin.version>14.6.2</vaadin.version>
   </properties>
 
   <prerequisites>
